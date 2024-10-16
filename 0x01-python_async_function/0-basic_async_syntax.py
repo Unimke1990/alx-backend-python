@@ -1,15 +1,13 @@
-#!/urs/bin/env python3
-"""
-importing need packages
-"""
+#!/usr/bin/env python3
+"""This module defines the function `wait_random`"""
 import asyncio
 import random
 
 
-"""function that returns time delayed"""
 async def wait_random(max_delay: int = 10) -> float:
-    waitTime = random.uniform(0, max_delay)
-    await asyncio.sleep(waitTime)
-    print(waitTime)
-    return waitTime
-asyncio.run(wait_random())
+    """ Asynchronous coroutine that waits for a random delay
+        and eventually returns it
+    """
+    delay = random.uniform(0, max_delay)
+    await asyncio.sleep(delay)
+    return delay
